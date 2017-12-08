@@ -81,8 +81,33 @@ class Day7
         Node root = new Node(rootNode, nodeWeights[rootNode]);
         root = fixTree(root, nodeConnections);
         root = fixWeights(root, nodeWeights);
+        findUnbalancedNode(root);
+    }
 
-        System.Console.WriteLine(root.name + ", weight: " + root.weight + ", totalWeight: " + root.totalWeight);
+    static void findUnbalancedNode(Node root)
+    {
+        if(root.nodesAbove.Count != 0)
+        {
+            int resultTotal = 0;
+            foreach(Node node in root.nodesAbove)
+            {
+                resultTotal += node.totalWeight;
+                findUnbalancedNode(node);
+            }
+
+            int offBy = resultTotal % root.nodesAbove.Count;
+            if(offBy != 0)//something was unbalanced!
+            {
+                System.Console.Write("TotalWeight: " + root.totalWeight + "\n\t");
+
+                foreach(Node node in root.nodesAbove)
+                {
+                    System.Console.Write(node.weight + ", " + node.totalWeight + "\n\t");
+                }
+
+                System.Console.Write("\n");
+            }
+        }
     }
 
     static Node fixWeights(Node root, IDictionary<string, int> nodeWeights)
@@ -90,8 +115,10 @@ class Day7
         root.weight = root.totalWeight = nodeWeights[root.name];
         if(root.nodesAbove.Count != 0)
         {
+            int resultTotal = 0;
             foreach(Node node in root.nodesAbove)
             {
+                resultTotal += node.totalWeight;
                 fixWeights(node, nodeWeights);
                 root.totalWeight += node.totalWeight;
             }
@@ -120,8 +147,8 @@ class Day7
 
     static string[] getInput()
     {
-        //string text = System.IO.File.ReadAllText(@"C:\Users\JMacfarland\adventOfCode2017\day7_input.txt");
-        string text = System.IO.File.ReadAllText(@"C:\Users\JMacfarland\adventOfCode2017\day7_test.txt");
+        string text = System.IO.File.ReadAllText(@"C:\Users\JMacfarland\adventOfCode2017\day7_input.txt");
+        //string text = System.IO.File.ReadAllText(@"C:\Users\JMacfarland\adventOfCode2017\day7_test.txt");
         string[] temp = text.Split('\n');
 
         return temp;
