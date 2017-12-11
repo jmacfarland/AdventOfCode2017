@@ -7,7 +7,7 @@ class Utils
 
     public static List<string[]> getInput(string fileName, bool sanitized = true)
     {
-        string text = System.IO.File.ReadAllText(String.Format(@"C:\Users\JMacfarland\adventOfCode2017\{0}", fileName));
+        string text = getInputString(fileName);
         string[] temp = text.Split('\n');
         List<string[]> data = new List<string[]>();
 
@@ -27,6 +27,11 @@ class Utils
         }
 
         return data;
+    }
+
+    public static string getInputString(string fileName)
+    {
+        return System.IO.File.ReadAllText(String.Format(@"C:\Users\JMacfarland\adventOfCode2017\txt\{0}", fileName));
     }
 
     public static string sanitize(string input)
