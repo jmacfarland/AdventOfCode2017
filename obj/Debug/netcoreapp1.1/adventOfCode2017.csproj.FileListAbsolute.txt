@@ -1,8 +1,0 @@
-c:\Users\JMacfarland\adventOfCode2017\bin\Debug\netcoreapp1.1\adventOfCode2017.deps.json
-c:\Users\JMacfarland\adventOfCode2017\bin\Debug\netcoreapp1.1\adventOfCode2017.runtimeconfig.json
-c:\Users\JMacfarland\adventOfCode2017\bin\Debug\netcoreapp1.1\adventOfCode2017.runtimeconfig.dev.json
-c:\Users\JMacfarland\adventOfCode2017\obj\Debug\netcoreapp1.1\adventOfCode2017.AssemblyInfo.cs
-c:\Users\JMacfarland\adventOfCode2017\bin\Debug\netcoreapp1.1\adventOfCode2017.dll
-c:\Users\JMacfarland\adventOfCode2017\bin\Debug\netcoreapp1.1\adventOfCode2017.pdb
-c:\Users\JMacfarland\adventOfCode2017\obj\Debug\netcoreapp1.1\adventOfCode2017.dll
-c:\Users\JMacfarland\adventOfCode2017\obj\Debug\netcoreapp1.1\adventOfCode2017.pdb
