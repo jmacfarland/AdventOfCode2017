@@ -9,6 +9,7 @@ class adventOfCode2017
         //Day6.solve();
         //Day7.solve();
         //Day8.solve();
-        Day9.solve();
+        //Day9.solve();
+        Day10.solve();
     }
 }
