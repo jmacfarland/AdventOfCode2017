@@ -5,10 +5,10 @@ using System.Text.RegularExpressions;
 class Utils
 {
 
-    public static List<string[]> getInput(string fileName, bool sanitized = true)
+    public static List<string[]> getInput(string fileName, char delimiter = '\n', bool sanitized = true)
     {
         string text = getInputString(fileName);
-        string[] temp = text.Split('\n');
+        string[] temp = text.Split(delimiter);
         List<string[]> data = new List<string[]>();
 
         foreach(string str in temp)

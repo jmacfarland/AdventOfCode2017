@@ -5,7 +5,7 @@ class Day8
 {
     public static void solve()
     {
-        var data = Utils.getInput("Day8_input.txt", false);
+        var data = Utils.getInput("Day8_input.txt", sanitized: false);
         int highestEver = 0;
         IDictionary<string, int> registers = new Dictionary<string, int>();
 

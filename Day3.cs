@@ -73,7 +73,7 @@ public class Day3
 				if(x != 0 || y != 0)
 				{
 					//don't process current pos, only ones around it
-					tempPoint.setPos (currentPos.x() + x, currentPos.y() + y);
+					tempPoint.setPos ((int)currentPos.x() + x, (int)currentPos.y() + y);
 					//Console.WriteLine ("checking " + tempPoint.ToString ());
 					if(points.TryGetValue (tempPoint.ToString (), out temp))
 					{
