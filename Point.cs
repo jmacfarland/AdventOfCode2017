@@ -4,12 +4,6 @@ public class Point
 	private float _x;
 	private float _y;
 
-	public Point (int x = 0, int y = 0)
-	{
-		this._x = x;
-		this._y = y;
-	}
-
 	public Point (float x, float y)
 	{
 		this._x = x;
@@ -28,7 +22,7 @@ public class Point
 		this.changeY(right.y());
 	}
 
-	public void setPos(int x, int y)
+	public void setPos(float x, float y)
 	{
 		this._x = x;
 		this._y = y;
@@ -67,12 +61,6 @@ public class Point3d
 	private float _y;
 	private float _z;
 
-	public Point3d (int x = 0, int y = 0, int z = 0)
-	{
-		this._x = x;
-		this._y = y;
-	}
-
 	public Point3d (float x, float y, float z)
 	{
 		this._x = x;
@@ -92,15 +80,18 @@ public class Point3d
 		this.changeZ(right.z());
 	}
 
-	public void setPos(int x, int y)
+	public void setPos(float x, float y, float z)
 	{
 		this._x = x;
 		this._y = y;
+		this._z = z;
 	}
 
-	public void changeX(int value)
+	public void changePos(float x, float y, float z)
 	{
-		this._x += value;
+		this._x += x;
+		this._y += y;
+		this._z += z;
 	}
 
 	public void changeX(float value)
@@ -108,19 +99,9 @@ public class Point3d
 		this._x += value;
 	}
 
-	public void changeY(int value)
-	{
-		this._y += value;
-	}
-
 	public void changeY(float value)
 	{
 		this._y += value;
-	}
-
-	public void changeZ(int value)
-	{
-		this._z += value;
 	}
 
 	public void changeZ(float value)
