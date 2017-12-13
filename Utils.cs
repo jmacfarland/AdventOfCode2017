@@ -31,11 +31,20 @@ class Utils
 
     public static string getInputString(string fileName)
     {
-        return System.IO.File.ReadAllText(String.Format(@"C:\Users\JMacfarland\adventOfCode2017\txt\{0}", fileName));
+        string path;
+        if(isLinux()) path = "/home/jamison/Projects/AdventOfCode2017/txt/";
+        else path = @"C:\Users\JMacfarland\adventOfCode2017\txt\";
+        return System.IO.File.ReadAllText(String.Format("{0}{1}", path, fileName));
     }
 
     public static string sanitize(string input)
     {
         return Regex.Replace(input,  "[^a-zA-Z ' ']", "");
+    }
+
+    public static bool isLinux()
+    {
+        int p = (int) Environment.OSVersion.Platform;
+        return (p == 4) || (p == 6) || (p == 128);
     }
 }
