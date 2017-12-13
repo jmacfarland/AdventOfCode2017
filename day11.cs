@@ -6,7 +6,7 @@ class Day11
     {
         string[] input = Utils.getInputString("day11_input.txt").Split(',');
         Point3d currentPosition = new Point3d();
-        Point3d furthestPosition = new Point3d();
+        Point3d farthestPosition = new Point3d();
 
         foreach(string direction in input)
         {
@@ -37,8 +37,15 @@ class Day11
                     currentPosition.changeX(-1);
                     break;
             }
+
+            if(currentPosition.getLargestAbsCoordinate() > farthestPosition.getLargestAbsCoordinate())
+            {
+                Console.WriteLine("New farthest: " + currentPosition.ToString());
+                farthestPosition.assign(currentPosition);
+            }
         }
 
         Console.WriteLine(currentPosition.ToString());
+        Console.WriteLine(farthestPosition.ToString());
     }
 }

@@ -4,7 +4,7 @@ public class Point
 	private float _x;
 	private float _y;
 
-	public Point (float x, float y)
+	public Point (float x = 0, float y = 0)
 	{
 		this._x = x;
 		this._y = y;
@@ -61,15 +61,18 @@ public class Point3d
 	private float _y;
 	private float _z;
 
-	public Point3d (float x, float y, float z)
+	public Point3d (float x = 0, float y = 0, float z = 0)
 	{
 		this._x = x;
 		this._y = y;
+		this._z = z;
 	}
 
-	public Point3d clone()
+	public void assign(Point3d point)
 	{
-		return new Point3d (this._x, this._y, this._z);
+		this._x = point.x();
+		this._y = point.y();
+		this._z = point.z();
 	}
 
 	//adds the position of the argument point to the position of this point
@@ -122,6 +125,17 @@ public class Point3d
 	public float z()
 	{
 		return this._z;
+	}
+
+	public float getLargestAbsCoordinate()
+	{
+		float highest = 0;
+
+		if(Math.Abs(this._x) > highest) highest = Math.Abs(this._x);
+		if(Math.Abs(this._y) > highest) highest = Math.Abs(this._y);
+		if(Math.Abs(this._z) > highest) highest = Math.Abs(this._z);
+	
+		return highest;
 	}
 
 	override public string ToString ()
